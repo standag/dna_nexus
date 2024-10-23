@@ -1,0 +1,19 @@
+[project]
+name = "dna-nexus"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "typer>=0.12.5",
+]
+
+[tool.setuptools]
+package-dir = {"dna_nexus" = "src"}
+
+
+[tool.uv]
+dev-dependencies = [
+    "pytest>=8.3.3",
+]
+package = true
