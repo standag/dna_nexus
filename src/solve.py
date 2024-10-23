@@ -3,23 +3,12 @@ from itertools import batched
 from typing import IO
 from pathlib import Path
 
+from .model import Nucleotide
+
 import typer
 
 NUCLEOTIDE_MAP = {0: "A", 64: "C", 128: "G", 192: "T"}
-
 BITS = [128, 64, 32, 16, 8, 4, 2, 1]
-
-EXCLAMATION_MARK_CODE = 33
-
-
-@dataclass
-class Nucleotide:
-    nucleotide: str
-    confidence: int
-
-    @property
-    def confidence_symbol(self) -> str:
-        return chr(self.confidence + EXCLAMATION_MARK_CODE)
 
 
 def str_to_bytes(binary_representation: str) -> bytes:
